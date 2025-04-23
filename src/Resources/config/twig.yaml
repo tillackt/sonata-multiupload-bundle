@@ -2,5 +2,6 @@ services:
     SilasJoisten\Sonata\MultiUploadBundle\Pool\ProviderChain: ~
 
     SilasJoisten\Sonata\MultiUploadBundle\Twig\MultiUploadExtension:
-        arguments: [ '@SilasJoisten\Sonata\MultiUploadBundle\Pool\ProviderChain' ]
-        tags: [ 'twig.extension' ]
+        arguments: ['@SilasJoisten\Sonata\MultiUploadBundle\Pool\ProviderChain']
+        tags: ['twig.extension']
+        autowire: true

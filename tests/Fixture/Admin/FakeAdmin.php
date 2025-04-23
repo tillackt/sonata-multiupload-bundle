@@ -12,12 +12,11 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
  */
 final class FakeAdmin extends AbstractAdmin
 {
-    protected $code = self::class;
-    protected $class = Fake::class;
-    protected $baseControllerName = '';
-
     public function __construct()
     {
-        parent::__construct($this->code, $this->class, $this->baseControllerName);
+        parent::__construct();
+        $this->setCode(self::class);
+        $this->setModelClass(Fake::class);
+        $this->setBaseControllerName('');
     }
 }

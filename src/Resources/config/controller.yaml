@@ -5,15 +5,11 @@ services:
             $mediaProviderPool: '@sonata.media.pool'
             $maxUploadSize: '%sonata_multi_upload.max_upload_filesize%'
             $redirectTo: '%sonata_multi_upload.redirect_to%'
-        tags: ['container.service_subscriber']
-        calls:
-            - setContainer: [ '@Psr\Container\ContainerInterface' ]
+        tags: ['controller.service_arguments']
         autowire: true
         public: true
 
     SilasJoisten\Sonata\MultiUploadBundle\Controller\CreateController:
         arguments: ['@sonata.media.pool']
         public: true
-        tags: [ 'container.service_subscriber' ]
-        calls:
-            - setContainer: [ '@Psr\Container\ContainerInterface' ]
+        tags: ['controller.service_arguments']
