@@ -12,9 +12,6 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 class SonataMultiUploadExtensionTest extends AbstractExtensionTestCase
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class SonataMultiUploadExtensionTest extends AbstractExtensionTestCase
         $this->assertTrue($this->container->hasDefinition(MultiUploadExtension::class));
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function getContainerExtensions(): array
     {
         return [

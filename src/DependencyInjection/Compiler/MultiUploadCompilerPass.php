@@ -13,9 +13,6 @@ use Symfony\Component\DependencyInjection\Reference;
 
 final class MultiUploadCompilerPass implements CompilerPassInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function process(ContainerBuilder $container)
     {
         $config = $container->getExtensionConfig('sonata_multi_upload');

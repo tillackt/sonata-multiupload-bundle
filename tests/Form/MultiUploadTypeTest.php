@@ -15,13 +15,13 @@ class MultiUploadTypeTest extends TypeTestCase
     public function testBuildForm()
     {
         $formBuilder = $this->createMock(FormBuilderInterface::class);
-        
+
         $formBuilder->expects($this->exactly(3))
             ->method('add')
             ->willReturnCallback(function ($name, $type, $options) use ($formBuilder) {
                 static $calls = 0;
-                $calls++;
-                
+                ++$calls;
+
                 switch ($calls) {
                     case 1:
                         $this->assertEquals('context', $name);
@@ -39,7 +39,7 @@ class MultiUploadTypeTest extends TypeTestCase
                         $this->assertEquals(['attr' => ['multiple' => true]], $options);
                         break;
                 }
-                
+
                 return $formBuilder;
             });
 

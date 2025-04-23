@@ -12,7 +12,7 @@ use Twig\TwigFunction;
 final class MultiUploadExtension extends AbstractExtension
 {
     public function __construct(
-        private ProviderChain $chain
+        private ProviderChain $chain,
     ) {
     }
 
