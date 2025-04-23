@@ -6,8 +6,7 @@ on: # yamllint disable-line rule:truthy
             - "**.ya?ml"
     push:
         branches:
-            - "develop"
-            - "master"
+            - "**"
         paths:
             - "**.ya?ml"
 

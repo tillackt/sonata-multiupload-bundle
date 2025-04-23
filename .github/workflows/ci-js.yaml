@@ -1,14 +1,13 @@
 name: "JS"
 
-on: # yamllint disable-line rule:truthy
+on: # ydamllint disable-line rule:truthy
     pull_request:
         paths:
             - ".github/workflows/ci-js.yaml"
             - "**"
     push:
         branches:
-            - "develop"
-            - "master"
+            - "**"
         paths:
             - ".github/workflows/ci-js.yaml"
             - "**"

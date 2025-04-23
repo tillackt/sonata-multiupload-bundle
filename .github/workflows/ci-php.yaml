@@ -7,8 +7,7 @@ on: # yamllint disable-line rule:truthy
             - "**"
     push:
         branches:
-            - "develop"
-            - "master"
+            - "**"
         paths:
             - ".github/workflows/ci-php.yaml"
             - "**"
@@ -27,7 +26,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "8.0"
+                    - "8.3"
 
         steps:
             -   name: "Checkout"
@@ -57,7 +56,7 @@ jobs:
 
             -
                 name: "Cache cache directory for friendsofphp/php-cs-fixer"
-                uses: "actions/cache@v3.0.7"
+                uses: "actions/cache@v4"
                 with:
                     path: ".build/php-cs-fixer"
                     key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ github.sha }}"
@@ -65,7 +64,7 @@ jobs:
 
             -
                 name: "Run friendsofphp/php-cs-fixer"
-                run: "vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --verbose"
+                run: "vendor/bin/php-cs-fixer fix --diff --format=json --verbose"
 
             -
                 name: "Commit files fixed with friendsofphp/php-cs-fixer"
@@ -88,7 +87,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "8.0"
+                    - "8.3"
 
         steps:
             -   name: "Checkout"

@@ -5,15 +5,16 @@ $finder = PhpCsFixer\Finder::create()
     ->in('tests')
 ;
 
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+return $config
     ->setRiskyAllowed(true)
     ->setRules([
         '@Symfony' => true,
         'ordered_class_elements' => true,
         'ordered_imports' => true,
         'no_unused_imports' => true,
-        'psr4' => true,
+        'psr_autoloading' => true,
         'array_syntax' => ['syntax' => 'short'],
     ])
     ->setFinder($finder)
-;
+; 
