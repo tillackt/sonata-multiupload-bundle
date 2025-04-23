@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.3 || ^8.4",
         "oskarstark/symfony-http-responder": "^1.0.0",
         "sonata-project/admin-bundle": "^4.3",
         "sonata-project/media-bundle": "^4.3",
@@ -28,7 +28,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "8.4.4"
+            "php": "8.3.0"
         }
     },
     "autoload": {
