@@ -47,4 +47,4 @@ jobs:
         run: curl -sS https://get.symfony.com/cli/installer | bash
 
       - name: "Lint Twig files"
-        run: ~/.symfony*/bin/symfony console lint:twig src/Resources/views
+        run: "$HOME/.symfony*/bin/symfony console lint:twig src/Resources/views"
