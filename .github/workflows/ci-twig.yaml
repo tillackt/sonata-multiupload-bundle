@@ -7,8 +7,7 @@ on:
       - ".github/workflows/ci-twig.yaml"
   push:
     branches:
-      - "develop"
-      - "master"
+      - "**"
     paths:
       - "**.twig"
       - ".github/workflows/ci-twig.yaml"

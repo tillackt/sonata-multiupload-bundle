@@ -7,8 +7,7 @@ on: # ydamllint disable-line rule:truthy
             - "**"
     push:
         branches:
-            - "develop"
-            - "master"
+            - "**"
         paths:
             - ".github/workflows/ci-js.yaml"
             - "**"
