@@ -23,5 +23,6 @@ class SonataMultiUploadExtension extends Extension
         $loader->load('controller.yaml');
         $loader->load('admin_extensions.yaml');
         $loader->load('twig.yaml');
+        $loader->load('services.yaml');
     }
 }

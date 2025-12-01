@@ -1,0 +1,32 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  # Dependencies für Controller (Symfony 7)
+  OskarStark\Symfony\Http\Responder: ~
+
+  # Container für ServiceSubscriber (falls benötigt)
+  Psr\Container\ContainerInterface: '@service_container'
+
+  # Controller Overrides (Symfony 7 kompatibel)
+  SilasJoisten\Sonata\MultiUploadBundle\Controller\CreateController:
+    public: true
+    arguments:
+      $pool: '@sonata.media.pool'
+    tags: ['controller.service_arguments']
+
+  SilasJoisten\Sonata\MultiUploadBundle\Controller\MultiUploadController:
+    public: true
+    arguments:
+      $mediaManager: '@sonata.media.manager.media'
+      $mediaProviderPool: '@sonata.media.pool'
+      $maxUploadSize: '%sonata_multi_upload.max_upload_filesize%'
+      $redirectTo: '%sonata_multi_upload.redirect_to%'
+    tags: ['controller.service_arguments']
+
+  # Admin Extensions
+  SilasJoisten\Sonata\MultiUploadBundle\Admin\MultiUploadAdminExtension:
+    tags:
+      - { name: sonata.admin.extension, target: sonata.media.admin.media }
